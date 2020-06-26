@@ -1,0 +1,15 @@
+#!/bin/bash
+set -eu -o pipefail
+
+if [[ ! -e "$HOME/.oci" ]]; then
+  mkdir "$HOME/.oci"
+fi
+
+docker container run \
+  --name oci$$ \
+  --rm \
+  -i \
+  -t \
+  -u "$(id -u):$(id -g)" \
+  -v "${HOME}/.oci:/home/oci_user/.oci" \
+  shakiyam/oci-cli "$@"
