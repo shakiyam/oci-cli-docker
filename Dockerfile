@@ -5,8 +5,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends sudo \
   && rm -rf /var/lib/apt/lists/*
 RUN chmod u+s /usr/sbin/useradd \
   && chmod u+s /usr/sbin/groupadd
-ENV USER_NAME=oci_user
-RUN echo "${USER_NAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/${USER_NAME}
 # hadolint ignore=DL3013
 RUN pip install oci oci-cli
 COPY entrypoint.sh /entrypoint.sh

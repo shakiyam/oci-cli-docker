@@ -10,6 +10,8 @@ docker container run \
   --rm \
   -i \
   -t \
+  -e USER_NAME="$(id -un)" \
+  -e HOME="$HOME" \
   -u "$(id -u):$(id -g)" \
-  -v "${HOME}/.oci:/home/oci_user/.oci" \
+  -v "$HOME/.oci:$HOME/.oci" \
   shakiyam/oci-cli "$@"
