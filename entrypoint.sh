@@ -9,6 +9,11 @@ if [[ "$USER_ID" -eq 0 || "$GROUP_ID" -eq 0 ]]; then
   exit 1
 fi
 
+if [[ -z "${USER_NAME:-}" ]]; then
+  echo "USER_NAME is not specified."
+  exit 1
+fi
+
 groupadd -g "$GROUP_ID" "$USER_NAME"
 useradd -d /home/"$USER_NAME" -s /bin/bash -u "$USER_ID" -g "$GROUP_ID" "$USER_NAME"
 
