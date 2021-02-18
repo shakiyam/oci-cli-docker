@@ -25,7 +25,7 @@ shellcheck: ## Lint shell scripts
 
 update_requirements: ## Update requirements.txt
 	@echo -e "\033[36m$@\033[0m"
-	@./update_requirements.sh
+	@pip-compile --upgrade
 
 help: ## Print this help
 	@echo 'Usage: make [target]'
