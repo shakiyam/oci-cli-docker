@@ -18,16 +18,16 @@ configparser==4.0.2
     # via
     #   oci
     #   oci-cli
-cryptography==3.2.1
+cryptography==3.3.2
     # via
     #   oci
     #   oci-cli
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci-cli==2.23.0
+oci-cli==2.24.1
     # via -r requirements.in
-oci==2.36.0
+oci==2.37.0
     # via oci-cli
 pycparser==2.20
     # via cffi
