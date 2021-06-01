@@ -6,7 +6,7 @@
 #
 arrow==0.17.0
     # via oci-cli
-certifi==2020.12.5
+certifi==2021.5.30
     # via
     #   oci
     #   oci-cli
@@ -25,9 +25,9 @@ cryptography==3.3.2
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci-cli==2.24.5
+oci-cli==2.25.0
     # via -r requirements.in
-oci==2.38.3
+oci==2.38.4
     # via oci-cli
 pycparser==2.20
     # via cffi
