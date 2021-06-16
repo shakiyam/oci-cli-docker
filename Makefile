@@ -17,15 +17,15 @@ build: ## Build an image from a Dockerfile
 
 hadolint: ## Lint Dockerfile
 	@echo -e "\033[36m$@\033[0m"
-	@hadolint Dockerfile
+	@./hadolint.sh Dockerfile
 
 shellcheck: ## Lint shell scripts
 	@echo -e "\033[36m$@\033[0m"
-	@shellcheck oci *.sh
+	@./shellcheck.sh oci *.sh
 
 update_requirements: ## Update requirements.txt
 	@echo -e "\033[36m$@\033[0m"
-	@pip-compile --upgrade
+	@./pip-compile.sh --upgrade
 
 help: ## Print this help
 	@echo 'Usage: make [target]'
