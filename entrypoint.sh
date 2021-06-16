@@ -1,8 +1,10 @@
 #!/bin/bash
 set -eu -o pipefail
 
-USER_ID="$(id -u)"; readonly USER_ID
-GROUP_ID="$(id -g)"; readonly GROUP_ID
+USER_ID="$(id -u)"
+readonly USER_ID
+GROUP_ID="$(id -g)"
+readonly GROUP_ID
 
 if [[ "$USER_ID" -eq 0 || "$GROUP_ID" -eq 0 ]]; then
   echo "No uid or gid specified."
