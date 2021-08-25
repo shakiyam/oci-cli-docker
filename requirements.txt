@@ -12,7 +12,7 @@ certifi==2021.5.30
     #   oci-cli
 cffi==1.14.6
     # via cryptography
-click==7.0
+click==7.1.2
     # via oci-cli
 configparser==4.0.2
     # via
@@ -25,9 +25,9 @@ cryptography==3.4.7
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci-cli==3.0.1
+oci-cli==3.0.2
     # via -r requirements.in
-oci==2.44.0
+oci==2.44.1
     # via oci-cli
 pycparser==2.20
     # via cffi
