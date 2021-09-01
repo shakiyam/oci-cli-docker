@@ -10,6 +10,7 @@ Installation
 curl -L# https://raw.githubusercontent.com/shakiyam/oci-cli-docker/master/oci \
   | sudo tee /usr/local/bin/oci >/dev/null
 sudo chmod +x /usr/local/bin/oci
+docker pull shakiyam/oci-cli
 ```
 
 Usage
