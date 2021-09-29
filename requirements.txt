@@ -14,8 +14,6 @@ cffi==1.14.6
     # via cryptography
 click==7.1.2
     # via oci-cli
-configparser==4.0.2
-    # via oci
 cryptography==3.4.7
     # via
     #   oci
@@ -23,9 +21,9 @@ cryptography==3.4.7
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci==2.45.1
+oci==2.46.0
     # via oci-cli
-oci-cli==3.0.5
+oci-cli==3.1.0
     # via -r requirements.in
 pycparser==2.20
     # via cffi
