@@ -4,7 +4,7 @@
 #
 #    pip-compile
 #
-arrow==1.2.0
+arrow==1.2.1
     # via oci-cli
 certifi==2021.10.8
     # via
@@ -23,9 +23,9 @@ cryptography==3.4.7
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci==2.48.0
+oci==2.49.0
     # via oci-cli
-oci-cli==3.2.0
+oci-cli==3.2.1
     # via -r requirements.in
 pycparser==2.20
     # via cffi
