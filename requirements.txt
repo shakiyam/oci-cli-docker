@@ -27,7 +27,7 @@ oci==2.49.1
     # via oci-cli
 oci-cli==3.2.2
     # via -r requirements.in
-pycparser==2.20
+pycparser==2.21
     # via cffi
 pyopenssl==19.1.0
     # via
