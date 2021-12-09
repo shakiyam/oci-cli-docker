@@ -5,9 +5,7 @@ IMAGE_NAME='shakiyam/oci-cli'
 readonly IMAGE_NAME
 CURRENT_IMAGE="$(docker image ls -q $IMAGE_NAME:latest)"
 readonly CURRENT_IMAGE
-docker image build \
-  -t "$IMAGE_NAME" \
-  "$(dirname "$0")"
+docker image build -t "$IMAGE_NAME" .
 LATEST_IMAGE="$(docker image ls -q $IMAGE_NAME:latest)"
 readonly LATEST_IMAGE
 if [[ "$CURRENT_IMAGE" != "$LATEST_IMAGE" ]]; then
