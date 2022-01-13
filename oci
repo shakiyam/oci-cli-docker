@@ -5,13 +5,27 @@ if [[ ! -e "$HOME/.oci" ]]; then
   mkdir "$HOME/.oci"
 fi
 
-docker container run \
-  --name oci$$ \
-  --rm \
-  -i \
-  -t \
-  -e USER_NAME="$(id -un)" \
-  -e HOME="$HOME" \
-  -u "$(id -u):$(id -g)" \
-  -v "$HOME/.oci:$HOME/.oci" \
-  shakiyam/oci-cli "$@"
+if [[ $(command -v docker) ]]; then
+  docker container run \
+    --name oci$$ \
+    --rm \
+    -e HOME="$HOME" \
+    -e USER_NAME="$(id -un)" \
+    -i \
+    -t \
+    -u "$(id -u):$(id -g)" \
+    -v "$HOME/.oci:$HOME/.oci" \
+    docker.io/shakiyam/oci-cli "$@"
+else
+  podman container run \
+    --entrypoint=/usr/local/bin/oci \
+    --name oci$$ \
+    --rm \
+    --security-opt label=disable \
+    --userns=keep-id \
+    -e HOME="$HOME" \
+    -i \
+    -t \
+    -v "$HOME/.oci:$HOME/.oci" \
+    docker.io/shakiyam/oci-cli "$@"
+fi
