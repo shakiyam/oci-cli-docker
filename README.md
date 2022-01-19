@@ -3,14 +3,18 @@ oci-cli-docker
 
 [oci-cli (Command Line Interface for Oracle Cloud Infrastructure)](https://github.com/oracle/oci-cli) Docker Image
 
+oci-cli-docker supports docker and podman on x86-64 and arm64.
+
 Installation
 ------------
+
+You can install by following these steps:
 
 ```console
 curl -L# https://raw.githubusercontent.com/shakiyam/oci-cli-docker/master/oci \
   | sudo tee /usr/local/bin/oci >/dev/null
 sudo chmod +x /usr/local/bin/oci
-docker pull shakiyam/oci-cli
+"$(command -v docker || command -v podman)" pull docker.io/shakiyam/oci-cli
 ```
 
 Usage
