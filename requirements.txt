@@ -4,7 +4,7 @@
 #
 #    pip-compile
 #
-arrow==1.2.1
+arrow==1.2.2
     # via oci-cli
 certifi==2021.10.8
     # via
