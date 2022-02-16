@@ -15,6 +15,7 @@ if [[ $(command -v docker) ]]; then
     -t \
     -u "$(id -u):$(id -g)" \
     -v "$HOME/.oci:$HOME/.oci" \
+    $([[ -v OCI_CLI_PROFILE ]] && echo "-e OCI_CLI_PROFILE=$OCI_CLI_PROFILE") \
     docker.io/shakiyam/oci-cli "$@"
 else
   podman container run \
@@ -27,5 +28,6 @@ else
     -i \
     -t \
     -v "$HOME/.oci:$HOME/.oci" \
+    $([[ -v OCI_CLI_PROFILE ]] && echo "-e OCI_CLI_PROFILE=$OCI_CLI_PROFILE") \
     docker.io/shakiyam/oci-cli "$@"
 fi
