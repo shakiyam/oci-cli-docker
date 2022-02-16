@@ -8,7 +8,7 @@ ALL_TARGETS := $(shell egrep -o ^[0-9A-Za-z_-]+: $(MAKEFILE_LIST) | sed 's/://')
 
 .PHONY: $(ALL_TARGETS)
 
-all: hadolint shellcheck shfmt update_requirements build ## Lint, update requirements.txt, and build
+all: hadolint shellcheck shfmt update_requirements build install ## Lint, update requirements.txt, build, and install
 	@:
 
 build: ## Build an image from a Dockerfile
@@ -18,6 +18,11 @@ build: ## Build an image from a Dockerfile
 hadolint: ## Lint Dockerfile
 	@echo -e "\033[36m$@\033[0m"
 	@./tools/hadolint.sh Dockerfile
+
+install: ## Install OCI CLI
+	@echo -e "\033[36m$@\033[0m"
+	@sudo cp oci /usr/local/bin/oci
+	@sudo chmod +x /usr/local/bin/oci
 
 shellcheck: ## Lint shell scripts
 	@echo -e "\033[36m$@\033[0m"
