@@ -20,6 +20,21 @@ sudo chmod +x /usr/local/bin/oci
 Usage
 -----
 
+To use cli 
+
+```console
+docker container run \
+  --name oci$$ \
+  --rm \
+  -i \
+  -t \
+  -e USER_NAME="$(id -un)" \
+  -e HOME="$HOME" \
+  -u "$(id -u):$(id -g)" \
+  -v "$HOME/.oci:$HOME/.oci" \
+  shakiyam/oci-cli "$@"
+```
+
 To get help with the command line:
 
 ```console
