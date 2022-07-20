@@ -16,22 +16,22 @@ circuitbreaker==1.4.0
     # via oci
 click==7.1.2
     # via oci-cli
-cryptography==3.4.7
+cryptography==37.0.2
     # via
     #   oci
     #   oci-cli
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci==2.75.0
+oci==2.75.1
     # via oci-cli
-oci-cli==3.11.0
+oci-cli==3.11.1
     # via -r requirements.in
 prompt-toolkit==3.0.29
     # via oci-cli
 pycparser==2.21
     # via cffi
-pyopenssl==19.1.0
+pyopenssl==22.0.0
     # via
     #   oci
     #   oci-cli
@@ -49,7 +49,6 @@ pyyaml==5.4.1
 six==1.16.0
     # via
     #   oci-cli
-    #   pyopenssl
     #   python-dateutil
 terminaltables==3.1.0
     # via oci-cli
