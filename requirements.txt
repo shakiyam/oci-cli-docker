@@ -6,7 +6,7 @@
 #
 arrow==1.2.3
     # via oci-cli
-certifi==2022.6.15.1
+certifi==2022.6.15.2
     # via
     #   oci
     #   oci-cli
@@ -23,9 +23,9 @@ cryptography==37.0.2
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci==2.81.0
+oci==2.82.0
     # via oci-cli
-oci-cli==3.16.0
+oci-cli==3.16.1
     # via -r requirements.in
 prompt-toolkit==3.0.29
     # via oci-cli
