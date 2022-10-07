@@ -23,6 +23,6 @@ elif [[ $(command -v podman) ]]; then
     -v "$PWD":/mnt:ro \
     docker.io/koalaman/shellcheck:stable "$@"
 else
-  echo_error "shellcheck could not be executed."
+  echo_error 'shellcheck could not be executed.'
   exit 1
 fi

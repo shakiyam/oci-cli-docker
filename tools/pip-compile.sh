@@ -25,6 +25,6 @@ elif [[ $(command -v podman) ]]; then
     -w /work \
     docker.io/shakiyam/pip-tools pip-compile "$@"
 else
-  echo_error "Neither docker nor podman is installed."
+  echo_error 'Neither docker nor podman is installed.'
   exit 1
 fi

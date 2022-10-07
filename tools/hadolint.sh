@@ -25,6 +25,6 @@ elif [[ $(command -v podman) ]]; then
     -w /work \
     docker.io/hadolint/hadolint hadolint "$@"
 else
-  echo_error "hadolint could not be executed."
+  echo_error 'hadolint could not be executed.'
   exit 1
 fi

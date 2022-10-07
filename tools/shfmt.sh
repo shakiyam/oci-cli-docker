@@ -25,6 +25,6 @@ elif [[ $(command -v podman) ]]; then
     -w /work \
     docker.io/mvdan/shfmt:latest "$@"
 else
-  echo_error "shfmt could not be executed."
+  echo_error 'shfmt could not be executed.'
   exit 1
 fi
