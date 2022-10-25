@@ -1,4 +1,4 @@
-FROM python:3.10-slim-bullseye
+FROM python:3.11-slim-bullseye
 RUN chmod u+s /usr/sbin/useradd \
   && chmod u+s /usr/sbin/groupadd
 COPY entrypoint.sh /entrypoint.sh
