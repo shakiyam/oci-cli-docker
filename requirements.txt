@@ -40,7 +40,7 @@ python-dateutil==2.8.2
     #   arrow
     #   oci
     #   oci-cli
-pytz==2022.5
+pytz==2022.6
     # via
     #   oci
     #   oci-cli
