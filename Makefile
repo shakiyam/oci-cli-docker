@@ -8,12 +8,16 @@ ALL_TARGETS := $(shell egrep -o ^[0-9A-Za-z_-]+: $(MAKEFILE_LIST) | sed 's/://')
 
 .PHONY: $(ALL_TARGETS)
 
-all: hadolint shellcheck shfmt update_requirements build install ## Lint, update requirements.txt, build, and install
+all: check_for_image_updates hadolint shellcheck shfmt update_requirements build install ## Lint, update requirements.txt, build, and install
 	@:
 
 build: ## Build an image from a Dockerfile
 	@echo -e "\033[36m$@\033[0m"
 	@./tools/build.sh docker.io/shakiyam/oci-cli
+
+check_for_image_updates: ## Check for image updates
+	@echo -e "\033[36m$@\033[0m"
+	@./tools/check_for_image_updates.sh "$(shell awk -e '/FROM/{print $$2}' Dockerfile)" docker.io/python:slim
 
 hadolint: ## Lint Dockerfile
 	@echo -e "\033[36m$@\033[0m"
