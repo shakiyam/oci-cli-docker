@@ -22,6 +22,6 @@ if [[ $HOME == "/" ]]; then
 fi
 
 groupadd -g "$GROUP_ID" "$USER_NAME"
-useradd -d "$HOME" -s /bin/bash -u "$USER_ID" -g "$GROUP_ID" "$USER_NAME"
+useradd -d "$HOME" -s /bin/bash -u "$USER_ID" -g "$GROUP_ID" "$USER_NAME" >/dev/null 2>&1
 
 exec /usr/local/bin/oci "$@"

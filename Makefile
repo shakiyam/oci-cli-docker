@@ -14,15 +14,11 @@ build: ## Build an image from a Dockerfile
 	@echo -e "\033[36m$@\033[0m"
 	@./tools/build.sh docker.io/shakiyam/oci-cli
 
-check_for_image_updates: ## Check for image updates
-	@echo -e "\033[36m$@\033[0m"
-	@./tools/check_for_image_updates.sh "$(shell awk -e '/FROM/{print $$2}' Dockerfile)" docker.io/python:slim
-
 check_for_library_updates: ## Check for library updates
 	@echo -e "\033[36m$@\033[0m"
 	@./tools/pip-compile.sh --upgrade
 
-check_for_updates: check_for_image_updates check_for_library_updates ## Check for updates to all dependencies
+check_for_updates: check_for_library_updates ## Check for updates to all dependencies
 
 hadolint: ## Lint Dockerfile
 	@echo -e "\033[36m$@\033[0m"
