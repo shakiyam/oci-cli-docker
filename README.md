@@ -14,25 +14,26 @@ You can install by following these steps:
 curl -L# https://raw.githubusercontent.com/shakiyam/oci-cli-docker/master/oci \
   | sudo tee /usr/local/bin/oci >/dev/null
 sudo chmod +x /usr/local/bin/oci
-"$(command -v docker || command -v podman)" pull docker.io/shakiyam/oci-cli
+"$(command -v docker || command -v podman)" pull ghcr.io/shakiyam/oci-cli
 ```
 
 Usage
 -----
 
-To use cli 
+Run `oci` command (recommended) or the following:
 
 ```console
 docker container run \
   --name oci$$ \
   --rm \
+  -e HOME="$HOME" \
+  -e USER_NAME="$(id -un)" \
   -i \
   -t \
-  -e USER_NAME="$(id -un)" \
-  -e HOME="$HOME" \
   -u "$(id -u):$(id -g)" \
   -v "$HOME/.oci:$HOME/.oci" \
-  shakiyam/oci-cli "$@"
+  $([[ -v OCI_CLI_PROFILE ]] && echo "-e OCI_CLI_PROFILE=$OCI_CLI_PROFILE") \
+  ghcr.io/shakiyam/oci-cli "$@"
 ```
 
 To get help with the command line:
