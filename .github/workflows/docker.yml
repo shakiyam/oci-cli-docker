@@ -30,4 +30,4 @@ jobs:
         with:
           platforms: linux/amd64, linux/arm64
           push: true
-          tags: docker.io/shakiyam/oci-cli:latest ghcr.io/shakiyam/oci-cli:latest
+          tags: docker.io/shakiyam/oci-cli:latest,ghcr.io/shakiyam/oci-cli:latest
