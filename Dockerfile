@@ -10,4 +10,4 @@ RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 COPY requirements.txt /requirements.txt
 # hadolint ignore=DL3013
-RUN pip3 install --no-cache-dir --upgrade pip && pip3 install --no-cache-dir -r /requirements.txt
+RUN python3 -m pip install --no-cache-dir --upgrade pip && python3 -m pip install --no-cache-dir -r /requirements.txt
