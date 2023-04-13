@@ -20,7 +20,7 @@ sudo chmod +x /usr/local/bin/oci
 Usage
 -----
 
-Run `oci` command (recommended) or the following:
+Run the `oci` command (recommended) or use the following:
 
 ```console
 docker container run \
