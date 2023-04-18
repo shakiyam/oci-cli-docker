@@ -7,7 +7,7 @@ GROUP_ID="$(id -g)"
 readonly GROUP_ID
 
 if [[ "$USER_ID" -eq 0 || "$GROUP_ID" -eq 0 ]]; then
-  echo "No uid or gid specified."
+  echo "Running with super user privileges is prohibited. Please use the -u option to specify a UID and GID that is not a super user."
   exit 1
 fi
 
