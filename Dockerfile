@@ -1,4 +1,5 @@
 FROM container-registry.oracle.com/os/oraclelinux:9-slim
+SHELL ["/bin/bash", "-c"]
 # hadolint ignore=DL3041
 RUN microdnf -y install jq python3 pip \
   && microdnf clean all \
