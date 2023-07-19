@@ -11,5 +11,4 @@ ENTRYPOINT ["/entrypoint.sh"]
 COPY requirements.txt /requirements.txt
 # hadolint ignore=DL3013
 RUN python3 -m pip install --no-cache-dir --upgrade pip \
-  && python3 -m pip install --no-cache-dir -r /requirements.txt \
-  && printf 1 >"$(python3 -c 'import os, interactive; print(os.path.join(os.path.dirname(interactive.__file__), "suggestion_variable.txt"))')"
+  && python3 -m pip install --no-cache-dir -r /requirements.txt

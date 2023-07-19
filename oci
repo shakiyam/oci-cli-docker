@@ -7,6 +7,9 @@ fi
 if [[ ! -e "$HOME/.oci" ]]; then
   mkdir "$HOME/.oci"
 fi
+if [[ ! -e "$HOME/suggestion_variable.txt" ]]; then
+  touch "$HOME/suggestion_variable.txt"
+fi
 
 if [[ $(command -v docker) ]]; then
   # shellcheck disable=SC2046
@@ -20,6 +23,7 @@ if [[ $(command -v docker) ]]; then
     -u "$(id -u):$(id -g)" \
     -v "$HOME/.kube:$HOME/.kube" \
     -v "$HOME/.oci:$HOME/.oci" \
+    -v "$HOME/suggestion_variable.txt:$HOME/suggestion_variable.txt" \
     $([[ -v OCI_CLI_PROFILE ]] && echo "-e OCI_CLI_PROFILE=$OCI_CLI_PROFILE") \
     ghcr.io/shakiyam/oci-cli "$@"
 elif [[ $(command -v podman) ]]; then
@@ -35,6 +39,7 @@ elif [[ $(command -v podman) ]]; then
     -t \
     -v "$HOME/.kube:$HOME/.kube" \
     -v "$HOME/.oci:$HOME/.oci" \
+    -v "$HOME/suggestion_variable.txt:$HOME/suggestion_variable.txt" \
     $([[ -v OCI_CLI_PROFILE ]] && echo "-e OCI_CLI_PROFILE=$OCI_CLI_PROFILE") \
     ghcr.io/shakiyam/oci-cli "$@"
 else
