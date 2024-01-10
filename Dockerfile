@@ -1,6 +1,6 @@
 FROM container-registry.oracle.com/os/oraclelinux:9-slim
 # hadolint ignore=DL3041
-RUN microdnf -y install jq python3 pip \
+RUN microdnf -y install gcc jq python3 python3-devel pip \
   && microdnf clean all \
   && rm -rf /var/cache \
   && chmod u+s /usr/sbin/useradd \
