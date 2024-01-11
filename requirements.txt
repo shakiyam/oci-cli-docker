@@ -6,10 +6,6 @@
 #
 arrow==1.3.0
     # via oci-cli
-asn1crypto==1.5.1
-    # via python-pkcs11
-cached-property==1.5.2
-    # via python-pkcs11
 certifi==2023.11.17
     # via
     #   oci
@@ -27,9 +23,9 @@ cryptography==41.0.7
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci==2.118.1
+oci==2.118.2
     # via oci-cli
-oci-cli==3.37.2
+oci-cli==3.37.3
     # via -r requirements.in
 prompt-toolkit==3.0.29
     # via oci-cli
@@ -44,8 +40,6 @@ python-dateutil==2.8.2
     #   arrow
     #   oci
     #   oci-cli
-python-pkcs11==0.7.0
-    # via oci
 pytz==2023.3.post1
     # via
     #   oci
