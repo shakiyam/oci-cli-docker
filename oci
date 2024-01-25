@@ -11,7 +11,7 @@ if [[ ! -e "$HOME/suggestion_variable.txt" ]]; then
   touch "$HOME/suggestion_variable.txt"
 fi
 
-if [[ $(command -v docker) ]]; then
+if command -v docker &>/dev/null; then
   # shellcheck disable=SC2046
   docker container run \
     --name oci$$ \
@@ -26,7 +26,7 @@ if [[ $(command -v docker) ]]; then
     -v "$HOME/suggestion_variable.txt:$HOME/suggestion_variable.txt" \
     $([[ -v OCI_CLI_PROFILE ]] && echo "-e OCI_CLI_PROFILE=$OCI_CLI_PROFILE") \
     ghcr.io/shakiyam/oci-cli "$@"
-elif [[ $(command -v podman) ]]; then
+elif command -v podman &>/dev/null; then
   # shellcheck disable=SC2046
   podman container run \
     --entrypoint=/usr/local/bin/oci \
