@@ -23,9 +23,9 @@ cryptography==41.0.7
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci==2.120.0
+oci==2.121.0
     # via oci-cli
-oci-cli==3.37.7
+oci-cli==3.37.8
     # via -r requirements.in
 prompt-toolkit==3.0.29
     # via oci-cli
@@ -50,7 +50,7 @@ six==1.16.0
     # via
     #   oci-cli
     #   python-dateutil
-terminaltables==3.1.0
+terminaltables==3.1.10
     # via oci-cli
 types-python-dateutil==2.8.19.20240106
     # via arrow
