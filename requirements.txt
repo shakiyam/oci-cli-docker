@@ -23,11 +23,11 @@ cryptography==42.0.7
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci==2.126.1
+oci==2.126.2
     # via oci-cli
-oci-cli==3.40.1
+oci-cli==3.40.2
     # via -r requirements.in
-prompt-toolkit==3.0.29
+prompt-toolkit==3.0.43
     # via oci-cli
 pycparser==2.22
     # via cffi
