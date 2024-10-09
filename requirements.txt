@@ -16,16 +16,16 @@ circuitbreaker==2.0.0
     # via oci
 click==8.0.4
     # via oci-cli
-cryptography==42.0.8
+cryptography==43.0.1
     # via
     #   oci
     #   oci-cli
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci==2.135.1
+oci==2.135.2
     # via oci-cli
-oci-cli==3.48.2
+oci-cli==3.49.0
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
