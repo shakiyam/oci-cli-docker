@@ -25,7 +25,7 @@ jmespath==0.10.0
     # via oci-cli
 oci==2.135.2
     # via oci-cli
-oci-cli==3.49.0
+oci-cli==3.49.1
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
