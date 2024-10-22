@@ -1,12 +1,10 @@
+MAKEFLAGS += --no-builtin-rules
 MAKEFLAGS += --warn-undefined-variables
 SHELL := /bin/bash
 .SHELLFLAGS := -eu -o pipefail -c
-.DEFAULT_GOAL := help
-.SUFFIXES:
-
-ALL_TARGETS := $(shell egrep -o ^[0-9A-Za-z_-]+: $(MAKEFILE_LIST) | sed 's/://')
-
+ALL_TARGETS := $(shell grep -E -o ^[0-9A-Za-z_-]+: $(MAKEFILE_LIST) | sed 's/://')
 .PHONY: $(ALL_TARGETS)
+.DEFAULT_GOAL := help
 
 all: check_for_updates lint build install ## Check for updates, lint, build, and install
 
