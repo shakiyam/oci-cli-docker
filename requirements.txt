@@ -16,7 +16,7 @@ circuitbreaker==2.0.0
     # via oci
 click==8.0.4
     # via oci-cli
-cryptography==43.0.3
+cryptography==44.0.0
     # via
     #   oci
     #   oci-cli
@@ -31,7 +31,7 @@ prompt-toolkit==3.0.43
     # via oci-cli
 pycparser==2.22
     # via cffi
-pyopenssl==24.2.1
+pyopenssl==24.3.0
     # via
     #   oci
     #   oci-cli
