@@ -46,7 +46,7 @@ pytz==2024.2
     #   oci-cli
 pyyaml==6.0.1
     # via oci-cli
-six==1.16.0
+six==1.17.0
     # via
     #   oci-cli
     #   python-dateutil
