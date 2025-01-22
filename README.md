@@ -11,7 +11,7 @@ Installation
 You can install by following these steps:
 
 ```console
-curl -L# https://raw.githubusercontent.com/shakiyam/oci-cli-docker/master/oci \
+curl -L# https://raw.githubusercontent.com/shakiyam/oci-cli-docker/main/oci \
   | sudo tee /usr/local/bin/oci >/dev/null
 sudo chmod +x /usr/local/bin/oci
 "$(command -v docker || command -v podman)" pull ghcr.io/shakiyam/oci-cli
