@@ -25,6 +25,7 @@ if command -v docker &>/dev/null; then
     -v "$HOME/.oci:$HOME/.oci" \
     -v "$HOME/suggestion_variable.txt:$HOME/suggestion_variable.txt" \
     $([[ -v OCI_CLI_PROFILE ]] && echo "-e OCI_CLI_PROFILE=$OCI_CLI_PROFILE") \
+    $([[ -v SUPPRESS_LABEL_WARNING ]] && echo "-e SUPPRESS_LABEL_WARNING=$SUPPRESS_LABEL_WARNING") \
     ghcr.io/shakiyam/oci-cli "$@"
 elif command -v podman &>/dev/null; then
   # shellcheck disable=SC2046
@@ -41,6 +42,7 @@ elif command -v podman &>/dev/null; then
     -v "$HOME/.oci:$HOME/.oci" \
     -v "$HOME/suggestion_variable.txt:$HOME/suggestion_variable.txt" \
     $([[ -v OCI_CLI_PROFILE ]] && echo "-e OCI_CLI_PROFILE=$OCI_CLI_PROFILE") \
+    $([[ -v SUPPRESS_LABEL_WARNING ]] && echo "-e SUPPRESS_LABEL_WARNING=$SUPPRESS_LABEL_WARNING") \
     ghcr.io/shakiyam/oci-cli "$@"
 else
   echo "Neither docker nor podman is installed."
