@@ -16,7 +16,7 @@ circuitbreaker==2.0.0
     # via oci
 click==8.0.4
     # via oci-cli
-cryptography==44.0.1
+cryptography==44.0.2
     # via
     #   oci
     #   oci-cli
