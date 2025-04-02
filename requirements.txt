@@ -12,7 +12,7 @@ certifi==2025.1.31
     #   oci-cli
 cffi==1.17.1
     # via cryptography
-circuitbreaker==2.1.0
+circuitbreaker==2.1.3
     # via oci
 click==8.0.4
     # via oci-cli
@@ -23,9 +23,9 @@ cryptography==44.0.2
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci==2.149.1
+oci==2.149.2
     # via oci-cli
-oci-cli==3.54.0
+oci-cli==3.54.1
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
