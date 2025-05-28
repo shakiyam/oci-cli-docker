@@ -23,9 +23,9 @@ cryptography==44.0.3
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci==2.152.1
+oci==2.153.0
     # via oci-cli
-oci-cli==3.56.1
+oci-cli==3.57.0
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
