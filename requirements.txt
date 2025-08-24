@@ -52,7 +52,7 @@ six==1.17.0
     #   python-dateutil
 terminaltables==3.1.10
     # via oci-cli
-types-python-dateutil==2.9.0.20250809
+types-python-dateutil==2.9.0.20250822
     # via arrow
 wcwidth==0.2.13
     # via prompt-toolkit
