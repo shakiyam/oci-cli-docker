@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eu -o pipefail
+set -Eeu -o pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 readonly SCRIPT_DIR
@@ -8,7 +8,7 @@ readonly SCRIPT_DIR
 
 if command -v docker &>/dev/null; then
   docker container run \
-    --name pip-compile$$ \
+    --name "pip-compile_$(uuidgen | head -c8)" \
     --rm \
     -e HOME=/tmp \
     -u "$(id -u):$(id -g)" \
@@ -17,7 +17,7 @@ if command -v docker &>/dev/null; then
     ghcr.io/shakiyam/pip-tools pip-compile "$@"
 elif command -v podman &>/dev/null; then
   podman container run \
-    --name pip-compile$$ \
+    --name "pip-compile_$(uuidgen | head -c8)" \
     --rm \
     --security-opt label=disable \
     -e HOME=/tmp \
