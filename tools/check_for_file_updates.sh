@@ -11,3 +11,4 @@ if [[ -n $(git diff "$@") ]]; then
   git --no-pager diff "$@"
   exit 2
 fi
+echo_success "No file changes detected."
