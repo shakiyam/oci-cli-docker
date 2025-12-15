@@ -54,7 +54,7 @@ terminaltables==3.1.10
     # via oci-cli
 typing-extensions==4.15.0
     # via pyopenssl
-tzdata==2025.2
+tzdata==2025.3
     # via arrow
 wcwidth==0.2.14
     # via prompt-toolkit
