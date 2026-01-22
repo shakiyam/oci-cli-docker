@@ -29,7 +29,7 @@ oci-cli==3.72.1
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
-pycparser==2.23
+pycparser==3.0
     # via cffi
 pyopenssl==25.1.0
     # via
@@ -56,7 +56,7 @@ typing-extensions==4.15.0
     # via pyopenssl
 tzdata==2025.3
     # via arrow
-wcwidth==0.2.14
+wcwidth==0.3.0
     # via prompt-toolkit
 
 # The following packages are considered to be unsafe in a requirements file:
