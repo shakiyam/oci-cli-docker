@@ -56,7 +56,7 @@ typing-extensions==4.15.0
     # via pyopenssl
 tzdata==2025.3
     # via arrow
-wcwidth==0.3.5
+wcwidth==0.4.0
     # via prompt-toolkit
 
 # The following packages are considered to be unsafe in a requirements file:
