@@ -23,9 +23,9 @@ cryptography==45.0.7
     #   pyopenssl
 jmespath==0.10.0
     # via oci-cli
-oci==2.165.1
+oci==2.166.0
     # via oci-cli
-oci-cli==3.72.1
+oci-cli==3.73.1
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
@@ -56,7 +56,7 @@ typing-extensions==4.15.0
     # via pyopenssl
 tzdata==2025.3
     # via arrow
-wcwidth==0.4.0
+wcwidth==0.5.0
     # via prompt-toolkit
 
 # The following packages are considered to be unsafe in a requirements file:
