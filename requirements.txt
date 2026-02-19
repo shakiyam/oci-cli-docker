@@ -6,7 +6,7 @@
 #
 arrow==1.4.0
     # via oci-cli
-certifi==2026.1.4
+certifi==2025.11.12
     # via
     #   oci
     #   oci-cli
@@ -21,11 +21,11 @@ cryptography==45.0.7
     #   oci
     #   oci-cli
     #   pyopenssl
-jmespath==0.10.0
+jmespath==1.0.1
     # via oci-cli
-oci==2.167.1
+oci==2.167.2
     # via oci-cli
-oci-cli==3.74.0
+oci-cli==3.74.1
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
@@ -40,7 +40,7 @@ python-dateutil==2.9.0.post0
     #   arrow
     #   oci
     #   oci-cli
-pytz==2025.2
+pytz==2024.2
     # via
     #   oci
     #   oci-cli
