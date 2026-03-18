@@ -23,9 +23,9 @@ cryptography==46.0.5
     #   pyopenssl
 jmespath==1.0.1
     # via oci-cli
-oci==2.168.1
+oci==2.168.2
     # via oci-cli
-oci-cli==3.76.0
+oci-cli==3.76.1
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
@@ -56,6 +56,8 @@ typing-extensions==4.15.0
     # via pyopenssl
 tzdata==2025.3
     # via arrow
+urllib3==2.6.3
+    # via oci
 wcwidth==0.6.0
     # via prompt-toolkit
 
