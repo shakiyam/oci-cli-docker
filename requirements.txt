@@ -25,13 +25,13 @@ jmespath==1.0.1
     # via oci-cli
 oci==2.173.0
     # via oci-cli
-oci-cli==3.81.0
+oci-cli==3.81.1
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
 pycparser==3.0
     # via cffi
-pyopenssl==26.1.0
+pyopenssl==26.2.0
     # via
     #   oci
     #   oci-cli
@@ -58,7 +58,7 @@ tzdata==2026.2
     # via arrow
 urllib3==2.6.3
     # via oci
-wcwidth==0.6.0
+wcwidth==0.7.0
     # via prompt-toolkit
 
 # The following packages are considered to be unsafe in a requirements file:
