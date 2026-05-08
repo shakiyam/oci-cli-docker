@@ -1,1 +1,3 @@
 oci-cli
+# TODO: Remove this pin once oci SDK updates its vendored requests to drop the deprecated `strict=True` PoolManager kwarg (urllib3 2.7+ FutureWarning, error in v3.0)
+urllib3<2.7

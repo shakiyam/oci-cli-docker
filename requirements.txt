@@ -57,7 +57,9 @@ typing-extensions==4.15.0
 tzdata==2026.2
     # via arrow
 urllib3==2.6.3
-    # via oci
+    # via
+    #   -r requirements.in
+    #   oci
 wcwidth==0.7.0
     # via prompt-toolkit
 
