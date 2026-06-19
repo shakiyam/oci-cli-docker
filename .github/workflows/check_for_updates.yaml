@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Run check_for_action_updates.sh
         run: |
           ./tools/check_for_action_updates.sh actions/checkout
@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Run pip-compile --upgrade
         run: ./tools/pip-compile.sh --upgrade --strip-extras
       - name: Run check_for_file_updates.sh
