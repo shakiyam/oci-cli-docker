@@ -62,7 +62,7 @@ urllib3==2.6.3
     # via
     #   -r requirements.in
     #   oci
-wcwidth==0.8.1
+wcwidth==0.8.2
     # via prompt-toolkit
 
 # The following packages are considered to be unsafe in a requirements file:
