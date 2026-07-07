@@ -10,7 +10,7 @@ certifi==2025.11.12
     # via
     #   oci
     #   oci-cli
-cffi==2.0.0
+cffi==2.1.0
     # via cryptography
 circuitbreaker==2.1.3
     # via oci
