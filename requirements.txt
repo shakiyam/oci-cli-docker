@@ -58,7 +58,7 @@ terminaltables==3.1.10
     # via oci-cli
 typing-extensions==4.16.0
     # via pyopenssl
-tzdata==2026.2
+tzdata==2026.3
     # via arrow
 urllib3==2.6.3
     # via
