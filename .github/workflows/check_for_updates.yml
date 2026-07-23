@@ -6,6 +6,11 @@ on:
   schedule:
     - cron: '0 0 * * *'
   workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: check_for_updates-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   check_for_action_updates:
     name: Check for GitHub Actions updates
@@ -13,20 +18,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-      - name: Run check_for_action_updates.sh
-        run: |
-          ./tools/check_for_action_updates.sh actions/checkout
-          ./tools/check_for_action_updates.sh docker/build-push-action
-          ./tools/check_for_action_updates.sh docker/login-action
-          ./tools/check_for_action_updates.sh docker/setup-buildx-action
-          ./tools/check_for_action_updates.sh docker/setup-qemu-action
+      - name: Run make check_for_action_updates
+        run: make check_for_action_updates
   check_for_library_updates:
     name: Check for library updates
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-      - name: Run pip-compile --upgrade
-        run: ./tools/pip-compile.sh --upgrade --strip-extras
+      - name: Run make check_for_library_updates
+        run: make check_for_library_updates
       - name: Run check_for_file_updates.sh
         run: ./tools/check_for_file_updates.sh requirements.txt
