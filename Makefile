@@ -8,6 +8,10 @@ ALL_TARGETS := $(shell grep -E -o ^[0-9A-Za-z_-]+: $(MAKEFILE_LIST) | sed 's/://
 
 all: check_for_updates format lint build install ## Check for updates, format, lint, build, and install
 
+actionlint: ## Lint GitHub Actions workflow files
+	@echo -e "\033[36m$@\033[0m"
+	@./tools/actionlint.sh
+
 build: ## Build an image from a Dockerfile
 	@echo -e "\033[36m$@\033[0m"
 	@./tools/build.sh ghcr.io/shakiyam/oci-cli
@@ -43,7 +47,7 @@ install: ## Install OCI CLI
 	@sudo cp oci /usr/local/bin/oci
 	@sudo chmod +x /usr/local/bin/oci
 
-lint: hadolint shellcheck ## Run all linting
+lint: actionlint hadolint shellcheck zizmor ## Run all linting
 
 shellcheck: ## Lint shell scripts
 	@echo -e "\033[36m$@\033[0m"
@@ -52,3 +56,7 @@ shellcheck: ## Lint shell scripts
 shfmt: ## Format shell scripts
 	@echo -e "\033[36m$@\033[0m"
 	@./tools/shfmt.sh -l -w -i 2 -ci -bn oci ./*.sh tools/*.sh
+
+zizmor: ## Lint GitHub Actions workflows for security issues
+	@echo -e "\033[36m$@\033[0m"
+	@./tools/zizmor.sh .

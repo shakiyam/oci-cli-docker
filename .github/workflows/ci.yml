@@ -22,6 +22,16 @@ jobs:
         run: make format
       - name: Run check_for_file_updates.sh
         run: ./tools/check_for_file_updates.sh
+  actionlint:
+    name: actionlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Run make actionlint
+        run: make actionlint
   hadolint:
     name: hadolint
     runs-on: ubuntu-latest
@@ -42,13 +52,25 @@ jobs:
           persist-credentials: false
       - name: Run make shellcheck
         run: make shellcheck
+  zizmor:
+    name: zizmor
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Run make zizmor
+        run: make zizmor
+        env:
+          GH_TOKEN: ${{ github.token }}
   build:
     name: Build and Push
     permissions:
       contents: read
       packages: write
     runs-on: ubuntu-latest
-    needs: [format, hadolint, shellcheck]
+    needs: [format, actionlint, hadolint, shellcheck, zizmor]
     if: github.event_name == 'push'
     steps:
       - name: Checkout
