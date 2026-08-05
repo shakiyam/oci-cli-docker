@@ -30,7 +30,11 @@ check_for_library_updates: ## Check for library updates
 
 check_for_updates: check_for_action_updates check_for_library_updates ## Check for updates to all dependencies
 
-format: shfmt yamlfmt ## Run all formatting
+dockerfmt: ## Format Dockerfile
+	@echo -e "\033[36m$@\033[0m"
+	@./tools/dockerfmt.sh -i 2 -n -w Dockerfile
+
+format: dockerfmt shfmt yamlfmt ## Run all formatting
 
 hadolint: ## Lint Dockerfile
 	@echo -e "\033[36m$@\033[0m"
