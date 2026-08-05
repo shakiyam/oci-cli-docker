@@ -48,7 +48,7 @@ or
 oci --h
 ```
 
-For detailed documentation of the CLI, see [here](https://docs.cloud.oracle.com/Content/API/Concepts/cliconcepts.htm).
+For detailed documentation, see the [OCI CLI documentation](https://docs.cloud.oracle.com/Content/API/Concepts/cliconcepts.htm).
 
 Author
 ------

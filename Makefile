@@ -51,7 +51,11 @@ install: ## Install OCI CLI
 	@sudo cp oci /usr/local/bin/oci
 	@sudo chmod +x /usr/local/bin/oci
 
-lint: actionlint hadolint shellcheck zizmor ## Run all linting
+lint: actionlint hadolint markdownlint shellcheck zizmor ## Run all linting
+
+markdownlint: ## Lint Markdown files
+	@echo -e "\033[36m$@\033[0m"
+	@./tools/markdownlint-cli2.sh "*.md"
 
 shellcheck: ## Lint shell scripts
 	@echo -e "\033[36m$@\033[0m"
