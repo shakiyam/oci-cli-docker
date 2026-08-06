@@ -105,6 +105,7 @@ jobs:
       - name: Build and Push
         uses: docker/build-push-action@v7
         with:
+          build-args: SOURCE_COMMIT=${{ github.sha }}
           platforms: linux/amd64, linux/arm64
           push: true
           tags: |
