@@ -52,6 +52,7 @@ jobs:
           load: true
           no-cache: true
           tags: ghcr.io/shakiyam/oci-cli:latest
+          cache-to: type=gha,scope=ci-${{ github.run_id }},mode=max
       - name: Run make test
         run: make test
   build:
@@ -59,7 +60,7 @@ jobs:
     permissions:
       contents: read
       packages: write
-    needs: [format, lint]
+    needs: [format, lint, test]
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
@@ -88,6 +89,7 @@ jobs:
           build-args: SOURCE_COMMIT=${{ github.sha }}
           platforms: linux/amd64, linux/arm64
           push: true
+          cache-from: type=gha,scope=ci-${{ github.run_id }}
           tags: |
             docker.io/shakiyam/oci-cli:latest
             ghcr.io/shakiyam/oci-cli:latest
