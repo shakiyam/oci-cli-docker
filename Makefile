@@ -6,7 +6,7 @@ ALL_TARGETS := $(shell grep -E -o ^[0-9A-Za-z_-]+: $(MAKEFILE_LIST) | sed 's/://
 .PHONY: $(ALL_TARGETS)
 .DEFAULT_GOAL := help
 
-all: check_for_updates format lint build install ## Check for updates, format, lint, build, and install
+all: check_for_updates format lint build test install ## Check for updates, format, lint, build, test, and install
 
 actionlint: ## Lint GitHub Actions workflow files
 	@echo -e "\033[36m$@\033[0m"
@@ -29,6 +29,9 @@ check_for_library_updates: ## Check for library updates
 	@./tools/pip-compile.sh --upgrade --strip-extras
 
 check_for_updates: check_for_action_updates check_for_library_updates ## Check for updates to all dependencies
+
+check_local_image:
+	@./tools/check_local_image.sh ghcr.io/shakiyam/oci-cli
 
 dockerfmt: ## Format Dockerfile
 	@echo -e "\033[36m$@\033[0m"
@@ -64,6 +67,10 @@ shellcheck: ## Lint shell scripts
 shfmt: ## Format shell scripts
 	@echo -e "\033[36m$@\033[0m"
 	@./tools/shfmt.sh -l -w -i 2 -ci -bn oci ./*.sh tools/*.sh
+
+test: check_local_image ## Test OCI CLI
+	@echo -e "\033[36m$@\033[0m"
+	@./test_oci_cli.sh
 
 yamlfmt: ## Format YAML files
 	@echo -e "\033[36m$@\033[0m"
