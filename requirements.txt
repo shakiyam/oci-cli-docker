@@ -18,16 +18,16 @@ click==8.4.2
     # via oci-cli
 crc32c==2.8
     # via oci
-cryptography==49.0.0
+cryptography==50.0.0
     # via
     #   oci
     #   oci-cli
     #   pyopenssl
 jmespath==1.0.1
     # via oci-cli
-oci==2.184.1
+oci==2.184.2
     # via oci-cli
-oci-cli==3.90.2
+oci-cli==3.90.3
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
