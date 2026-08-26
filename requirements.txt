@@ -4,8 +4,16 @@
 #
 #    pip-compile --strip-extras
 #
+aiohappyeyeballs==2.7.1
+    # via aiohttp
+aiohttp==3.14.3
+    # via oci
+aiosignal==1.4.0
+    # via aiohttp
 arrow==1.4.0
     # via oci-cli
+attrs==26.1.0
+    # via aiohttp
 certifi==2025.11.12
     # via
     #   oci
@@ -18,19 +26,33 @@ click==8.4.2
     # via oci-cli
 crc32c==2.8
     # via oci
-cryptography==50.0.0
+cryptography==50.0.1
     # via
     #   oci
     #   oci-cli
     #   pyopenssl
+frozenlist==1.8.0
+    # via
+    #   aiohttp
+    #   aiosignal
+idna==3.19
+    # via yarl
 jmespath==1.0.1
     # via oci-cli
-oci==2.184.2
+multidict==6.7.1
+    # via
+    #   aiohttp
+    #   yarl
+oci==2.185.0
     # via oci-cli
-oci-cli==3.90.3
+oci-cli==3.91.0
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
+propcache==0.5.2
+    # via
+    #   aiohttp
+    #   yarl
 pycparser==3.0
     # via cffi
 pyjwt==2.13.0
@@ -57,7 +79,10 @@ six==1.17.0
 terminaltables==3.1.10
     # via oci-cli
 typing-extensions==4.16.0
-    # via pyopenssl
+    # via
+    #   aiohttp
+    #   aiosignal
+    #   pyopenssl
 tzdata==2026.3
     # via arrow
 urllib3==2.6.3
@@ -66,6 +91,8 @@ urllib3==2.6.3
     #   oci
 wcwidth==0.8.2
     # via prompt-toolkit
+yarl==1.24.5
+    # via aiohttp
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
