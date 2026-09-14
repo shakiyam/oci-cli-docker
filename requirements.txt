@@ -55,7 +55,7 @@ propcache==0.5.2
     #   yarl
 pycparser==3.0
     # via cffi
-pyjwt==2.13.0
+pyjwt==2.14.0
     # via oci
 pyopenssl==26.4.0
     # via
@@ -83,7 +83,7 @@ typing-extensions==4.16.0
     #   aiohttp
     #   aiosignal
     #   pyopenssl
-tzdata==2026.3
+tzdata==2026.4
     # via arrow
 urllib3==2.6.3
     # via
