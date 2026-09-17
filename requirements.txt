@@ -43,13 +43,13 @@ multidict==6.8.0
     # via
     #   aiohttp
     #   yarl
-oci==2.185.2
+oci==2.186.0
     # via oci-cli
-oci-cli==3.92.1
+oci-cli==3.93.0
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
-propcache==0.5.2
+propcache==0.5.4
     # via
     #   aiohttp
     #   yarl
@@ -91,7 +91,7 @@ urllib3==2.6.3
     #   oci
 wcwidth==0.8.3
     # via prompt-toolkit
-yarl==1.24.5
+yarl==1.25.1
     # via aiohttp
 
 # The following packages are considered to be unsafe in a requirements file:
