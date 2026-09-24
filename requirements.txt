@@ -35,17 +35,17 @@ frozenlist==1.8.0
     # via
     #   aiohttp
     #   aiosignal
-idna==3.19
+idna==3.20
     # via yarl
 jmespath==1.0.1
     # via oci-cli
-multidict==6.8.0
+multidict==6.9.1
     # via
     #   aiohttp
     #   yarl
-oci==2.186.0
+oci==2.187.0
     # via oci-cli
-oci-cli==3.93.0
+oci-cli==3.94.0
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
@@ -55,7 +55,7 @@ propcache==0.5.4
     #   yarl
 pycparser==3.0
     # via cffi
-pyjwt==2.14.0
+pyjwt==2.15.0
     # via oci
 pyopenssl==26.4.0
     # via
@@ -89,7 +89,7 @@ urllib3==2.6.3
     # via
     #   -r requirements.in
     #   oci
-wcwidth==0.8.3
+wcwidth==0.9.1
     # via prompt-toolkit
 yarl==1.25.1
     # via aiohttp
