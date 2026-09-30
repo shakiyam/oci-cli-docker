@@ -12,6 +12,8 @@ aiosignal==1.4.0
     # via aiohttp
 arrow==1.4.0
     # via oci-cli
+asn1crypto==1.5.1
+    # via python-pkcs11
 attrs==26.1.0
     # via aiohttp
 certifi==2025.11.12
@@ -43,9 +45,9 @@ multidict==6.9.1
     # via
     #   aiohttp
     #   yarl
-oci==2.187.0
+oci==2.187.1
     # via oci-cli
-oci-cli==3.94.0
+oci-cli==3.94.1
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
@@ -66,6 +68,8 @@ python-dateutil==2.9.0.post0
     #   arrow
     #   oci
     #   oci-cli
+python-pkcs11==0.9.4
+    # via oci
 pytz==2026.2
     # via
     #   oci
