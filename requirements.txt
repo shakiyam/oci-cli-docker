@@ -87,13 +87,13 @@ typing-extensions==4.16.0
     #   aiohttp
     #   aiosignal
     #   pyopenssl
-tzdata==2026.4
+tzdata==2026.5
     # via arrow
 urllib3==2.6.3
     # via
     #   -r requirements.in
     #   oci
-wcwidth==0.9.1
+wcwidth==0.9.2
     # via prompt-toolkit
 yarl==1.25.1
     # via aiohttp
