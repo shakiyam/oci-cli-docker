@@ -34,6 +34,26 @@ jobs:
         run: make --keep-going lint
         env:
           GH_TOKEN: ${{ github.token }}
+  pip_licenses:
+    name: pip-licenses
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+      - name: Build
+        uses: docker/build-push-action@v7
+        with:
+          build-args: SOURCE_COMMIT=${{ github.sha }}
+          platforms: linux/amd64
+          load: true
+          no-cache: true
+          tags: ghcr.io/shakiyam/oci-cli:latest
+      - name: Run make pip_licenses
+        run: make pip_licenses
   test:
     name: Build and Test
     runs-on: ubuntu-latest
@@ -60,7 +80,7 @@ jobs:
     permissions:
       contents: read
       packages: write
-    needs: [format, lint, test]
+    needs: [format, lint, pip_licenses, test]
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
