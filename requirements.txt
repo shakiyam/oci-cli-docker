@@ -6,7 +6,7 @@
 #
 aiohappyeyeballs==2.7.1
     # via aiohttp
-aiohttp==3.14.4
+aiohttp==3.14.5
     # via oci
 aiosignal==1.4.0
     # via aiohttp
@@ -41,7 +41,7 @@ idna==3.20
     # via yarl
 jmespath==1.0.1
     # via oci-cli
-multidict==6.9.1
+multidict==7.1.0
     # via
     #   aiohttp
     #   yarl
@@ -55,7 +55,7 @@ propcache==0.5.4
     # via
     #   aiohttp
     #   yarl
-pycparser==3.1
+pycparser==3.11
     # via cffi
 pyjwt==2.15.1
     # via oci
