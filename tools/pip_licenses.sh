@@ -19,7 +19,7 @@ IMAGE_NAME="$1"
 readonly IMAGE_NAME
 shift
 
-# Requires sh and pip in the image.
+# Requires sh and pip 22.1 or later (for --root-user-action) in the image, with a Python not marked externally managed (PEP 668).
 # shellcheck disable=SC2016
 $CONTAINER_ENGINE container run \
   --name "pip_licenses_$(uuidgen | head -c8)" \
