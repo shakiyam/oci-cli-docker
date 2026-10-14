@@ -1,3 +1,4 @@
+# Oracle Linux 9 publishes no point-release tags, so the floating tag is used and there is no pinned version for check_for_image_updates to compare
 FROM ghcr.io/oracle/oraclelinux:9-slim
 # hadolint ignore=DL3041
 RUN microdnf -y install jq python3.12 python3.12-pip \
