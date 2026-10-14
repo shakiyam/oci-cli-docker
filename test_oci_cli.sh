@@ -45,3 +45,10 @@ if [[ ! -f "$WORK_DIR"/oci_api_key.pem || ! -f "$WORK_DIR"/oci_api_key_public.pe
 fi
 
 echo_success 'Test passed: oci setup keys generated an API key pair successfully.'
+
+if ! HOME="$WORK_DIR" "$SCRIPT_DIR"/oci -v </dev/null; then
+  echo_error 'Test failed: oci wrapper exited with a non-zero status when stdin is not a terminal.'
+  exit 1
+fi
+
+echo_success 'Test passed: oci wrapper ran successfully when stdin is not a terminal.'

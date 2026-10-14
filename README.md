@@ -29,9 +29,9 @@ docker container run \
   -e HOME="$HOME" \
   -e USER_NAME="$(id -un)" \
   -i \
-  -t \
   -u "$(id -u):$(id -g)" \
   -v "$HOME/.oci:$HOME/.oci" \
+  $([[ -t 0 ]] && echo -t) \
   $([[ -v OCI_CLI_PROFILE ]] && echo "-e OCI_CLI_PROFILE=$OCI_CLI_PROFILE") \
   ghcr.io/shakiyam/oci-cli "$@"
 ```
