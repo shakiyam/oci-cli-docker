@@ -82,6 +82,7 @@ jobs:
       packages: write # Push images to GitHub Container Registry
     needs: [format, lint, pip_licenses, test]
     if: github.event_name == 'push'
+    environment: docker-hub
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
