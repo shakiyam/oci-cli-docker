@@ -87,7 +87,7 @@ typing-extensions==4.16.0
     #   aiohttp
     #   aiosignal
     #   pyopenssl
-tzdata==2026.5
+tzdata==2026.6
     # via arrow
 urllib3==2.6.3
     # via
