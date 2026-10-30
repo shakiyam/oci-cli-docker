@@ -89,10 +89,8 @@ typing-extensions==4.16.0
     #   pyopenssl
 tzdata==2026.6
     # via arrow
-urllib3==2.6.3
-    # via
-    #   -r requirements.in
-    #   oci
+urllib3==2.8.0
+    # via oci
 wcwidth==0.9.4
     # via prompt-toolkit
 yarl==1.25.1
