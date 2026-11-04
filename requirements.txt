@@ -16,7 +16,7 @@ asn1crypto==1.5.1
     # via python-pkcs11
 attrs==26.1.0
     # via aiohttp
-certifi==2025.11.12
+certifi==2026.10.23
     # via
     #   oci
     #   oci-cli
@@ -45,9 +45,9 @@ multidict==7.2.1
     # via
     #   aiohttp
     #   yarl
-oci==2.189.0
+oci==2.190.0
     # via oci-cli
-oci-cli==3.95.1
+oci-cli==3.96.0
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
