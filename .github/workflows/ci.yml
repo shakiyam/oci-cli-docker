@@ -75,12 +75,22 @@ jobs:
           cache-to: type=gha,scope=ci-${{ github.run_id }},mode=max
       - name: Run make test
         run: make test
+  trivy:
+    name: Trivy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Run make trivy
+        run: make trivy
   build:
     name: Build and Push
     permissions:
       contents: read
       packages: write # Push images to GitHub Container Registry
-    needs: [format, lint, pip_licenses, test]
+    needs: [format, lint, pip_licenses, test, trivy]
     if: github.event_name == 'push'
     environment: docker-hub
     runs-on: ubuntu-latest

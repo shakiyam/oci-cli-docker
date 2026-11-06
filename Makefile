@@ -6,7 +6,7 @@ ALL_TARGETS := $(shell grep -E -o ^[0-9A-Za-z_-]+: $(MAKEFILE_LIST) | sed 's/://
 .PHONY: $(ALL_TARGETS)
 .DEFAULT_GOAL := help
 
-all: check_for_updates format lint build pip_licenses test install ## Check for updates, format, lint, build, check licenses, test, and install
+all: check_for_updates format lint build trivy pip_licenses test install ## Check for updates, format, lint, build, scan image, check licenses, test, and install
 
 actionlint: ## Lint GitHub Actions workflow files
 	@echo -e "\033[36m$@\033[0m"
@@ -77,6 +77,12 @@ shfmt: ## Format shell scripts
 test: check_local_image ## Test OCI CLI
 	@echo -e "\033[36m$@\033[0m"
 	@./test_oci_cli.sh
+
+# pip's bundled SBOM lists setuptools 70.3.0 for its vendored pkg_resources, which trivy flags as CVE-2025-47273
+# although pip does not ship the vulnerable setuptools/package_index.py; skip the SBOM until pip fixes it
+trivy: build ## Scan Docker image for vulnerabilities
+	@echo -e "\033[36m$@\033[0m"
+	@./tools/trivy.sh image --quiet --severity HIGH,CRITICAL --ignore-unfixed --exit-code 1 --skip-files /usr/local/lib/python3.12/site-packages/pip/_vendor/bom.cdx.json ghcr.io/shakiyam/oci-cli | sed -n '/^Total:/,$$p'
 
 yamlfmt: ## Format YAML files
 	@echo -e "\033[36m$@\033[0m"
