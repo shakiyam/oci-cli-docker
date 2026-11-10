@@ -3,9 +3,7 @@ FROM ghcr.io/oracle/oraclelinux:9-slim
 # hadolint ignore=DL3041
 RUN microdnf -y install jq python3.12 python3.12-pip \
   && microdnf clean all \
-  && rm -rf /var/cache \
-  && chmod u+s /usr/sbin/useradd \
-  && chmod u+s /usr/sbin/groupadd
+  && rm -rf /var/cache
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

@@ -15,7 +15,7 @@ IMAGE_NAME=ghcr.io/shakiyam/oci-cli
 readonly IMAGE_NAME
 
 if [[ $CONTAINER_ENGINE == docker ]]; then
-  ENGINE_OPTS=(-u "$(id -u):$(id -g)" -e USER_NAME="$(id -un)")
+  ENGINE_OPTS=(-u "$(id -u):$(id -g)")
 else
   ENGINE_OPTS=(--entrypoint=/usr/local/bin/oci --security-opt label=disable --userns=keep-id)
 fi
@@ -24,6 +24,18 @@ readonly ENGINE_OPTS
 WORK_DIR=$(mktemp -d)
 readonly WORK_DIR
 trap 'rm -rf "$WORK_DIR"' EXIT
+
+if ! $CONTAINER_ENGINE container run \
+  --name "test_oci_cli_$(uuidgen | head -c8)" \
+  --rm \
+  --pull=never \
+  --entrypoint=/usr/bin/test \
+  "$IMAGE_NAME" ! -u /usr/sbin/useradd -a ! -u /usr/sbin/groupadd; then
+  echo_error 'Test failed: useradd or groupadd has the setuid bit.'
+  exit 1
+fi
+
+echo_success 'Test passed: useradd and groupadd do not have the setuid bit.'
 
 echo 'test passphrase' >"$WORK_DIR"/passphrase.txt
 

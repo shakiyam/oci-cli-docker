@@ -27,7 +27,6 @@ docker container run \
   --name oci$$ \
   --rm \
   -e HOME="$HOME" \
-  -e USER_NAME="$(id -un)" \
   -i \
   -u "$(id -u):$(id -g)" \
   -v "$HOME/.oci:$HOME/.oci" \

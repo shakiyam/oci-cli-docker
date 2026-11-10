@@ -11,17 +11,9 @@ if [[ "$USER_ID" -eq 0 || "$GROUP_ID" -eq 0 ]]; then
   exit 1
 fi
 
-if [[ -z "${USER_NAME:-}" ]]; then
-  echo "USER_NAME is not specified." >&2
-  exit 1
-fi
-
 if [[ $HOME == "/" ]]; then
   echo "HOME is not specified." >&2
   exit 1
 fi
-
-groupadd -g "$GROUP_ID" "$USER_NAME"
-useradd -d "$HOME" -s /bin/bash -u "$USER_ID" -g "$GROUP_ID" "$USER_NAME" &>/dev/null
 
 exec /usr/local/bin/oci "$@"
