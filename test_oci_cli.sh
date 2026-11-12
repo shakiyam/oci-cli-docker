@@ -58,7 +58,14 @@ fi
 
 echo_success 'Test passed: oci setup keys generated an API key pair successfully.'
 
-if ! HOME="$WORK_DIR" "$SCRIPT_DIR"/oci -v </dev/null; then
+# Rootless Podman keeps its image storage and configuration under HOME by default; pin them to the real HOME so
+# the wrapper uses the locally built image instead of pulling the published one into WORK_DIR, whose
+# subuid-owned files the cleanup cannot remove.
+if ! env \
+  XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}" \
+  XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}" \
+  HOME="$WORK_DIR" \
+  "$SCRIPT_DIR"/oci -v </dev/null; then
   echo_error 'Test failed: oci wrapper exited with a non-zero status when stdin is not a terminal.'
   exit 1
 fi
