@@ -17,9 +17,26 @@ readonly IMAGE_NAME
 if [[ $CONTAINER_ENGINE == docker ]]; then
   ENGINE_OPTS=(-u "$(id -u):$(id -g)")
 else
-  ENGINE_OPTS=(--entrypoint=/usr/local/bin/oci --security-opt label=disable --userns=keep-id)
+  # The image runs as a non-root USER, which rootless Podman maps to a subuid that
+  # cannot write the caller's files; keep-id plus -u runs as the caller instead.
+  ENGINE_OPTS=(--entrypoint=/usr/local/bin/oci --security-opt label=disable --userns=keep-id -u "$(id -u):$(id -g)")
 fi
 readonly ENGINE_OPTS
+
+# Started without the wrapper's -u, the image itself must not run as root; id bypasses entrypoint.sh,
+# which would otherwise refuse root before the user could be reported
+IMAGE_UID=$($CONTAINER_ENGINE container run \
+  --name "test_oci_cli_$(uuidgen | head -c8)" \
+  --rm \
+  --pull=never \
+  --entrypoint=/usr/bin/id \
+  "$IMAGE_NAME" -u)
+if [[ $IMAGE_UID == 0 ]]; then
+  echo_error 'Test failed: the oci-cli image runs as root.'
+  exit 1
+fi
+
+echo_success 'Test passed: the oci-cli image does not run as root.'
 
 WORK_DIR=$(mktemp -d)
 readonly WORK_DIR
