@@ -16,7 +16,7 @@ asn1crypto==1.5.1
     # via python-pkcs11
 attrs==26.1.0
     # via aiohttp
-certifi==2026.10.23
+certifi==2026.11.20
     # via
     #   oci
     #   oci-cli
@@ -91,7 +91,7 @@ tzdata==2026.6
     # via arrow
 urllib3==2.8.0
     # via oci
-wcwidth==0.9.4
+wcwidth==0.9.5
     # via prompt-toolkit
 yarl==1.25.1
     # via aiohttp
