@@ -45,9 +45,9 @@ multidict==7.2.1
     # via
     #   aiohttp
     #   yarl
-oci==2.192.0
+oci==2.193.0
     # via oci-cli
-oci-cli==3.96.3
+oci-cli==3.97.1
     # via -r requirements.in
 prompt-toolkit==3.0.43
     # via oci-cli
@@ -74,7 +74,7 @@ pytz==2026.2
     # via
     #   oci
     #   oci-cli
-pyyaml==6.0.2
+pyyaml==6.0.3
     # via oci-cli
 six==1.17.0
     # via
